@@ -1,4 +1,4 @@
-import type { SchemaPlaylistListItemJsonApiData } from "./shared/api/schema";
+import type { SchemaPlaylistListItemJsonApiData } from "../../shared/api/schema";
 
 interface PlaylistsProps {
   data?: SchemaPlaylistListItemJsonApiData[];

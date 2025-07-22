@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import "./app/styles/index.css";
-import { client } from "./shared/api/client";
+import "../styles/index.css";
+import { client } from "../../shared/api/client";
 import { useQuery } from "@tanstack/react-query";
-import { Playlists } from "./Playlists";
+import { Playlists } from "./playlists";
 
-function App() {
+export const PlaylistsPage = () => {
   useEffect(() => {
     client
       .GET("/playlists")
@@ -27,6 +27,4 @@ function App() {
       <Playlists data={query.data?.data?.data} />
     </>
   );
-}
-
-export default App;
+};
