@@ -5,6 +5,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 import pluginQuery from "@tanstack/eslint-plugin-query";
+import { rules } from "eslint-plugin-react-refresh";
 
 export default tseslint.config([
   ...pluginQuery.configs["flat/recommended"],
@@ -20,6 +21,15 @@ export default tseslint.config([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          varsIgnorePattern: "^_",
+          argsIgnorePattern: "^_",
+        },
+      ],
     },
   },
 ]);

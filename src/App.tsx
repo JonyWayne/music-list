@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./App.css";
+import "./app/styles/index.css";
 import { client } from "./shared/api/client";
 import { useQuery } from "@tanstack/react-query";
 import { Playlists } from "./Playlists";
