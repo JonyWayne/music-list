@@ -51,6 +51,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: #007bff;
 }
 
 .button:hover {
