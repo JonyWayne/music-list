@@ -8,8 +8,8 @@
 
 .pageItem {
   padding: 5px 10px;
-  border: 1px solid #ddd;
-  background-color: white;
+  border: 1px solid #ffdede;
+  background-color: #1e7777;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.3s ease;

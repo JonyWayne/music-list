@@ -10,9 +10,12 @@ import { routeTree } from "../routes/routeTree.gen";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: Infinity,
-      refetchOnMount: false,
-      gcTime: 5 * 1000,
+      staleTime: Infinity, // Данные никогда не становятся "устаревшими"
+      gcTime: Infinity, // Данные никогда не удаляются из кэша
+      refetchOnMount: false, // Не перезапрашивать при монтировании
+      refetchOnWindowFocus: false, // Не перезапрашивать при фокусе окна
+      refetchOnReconnect: false, // Не перезапрашивать при восстановлении соединения
+      retry: false, // Не пытаться повторять запрос при ошибках
     },
   },
 });

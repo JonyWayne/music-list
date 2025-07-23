@@ -3,7 +3,7 @@ import styles from "./Pagination.module.css";
 
 interface PaginationProps {
   currentPage: number;
-  pageCount: number;
+  pageCount?: number;
   onPageChangeHandler: (page: number) => void;
 }
 
@@ -12,7 +12,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   pageCount,
   onPageChangeHandler,
 }) => {
-  if (pageCount <= 1) return null;
+  if (!pageCount || pageCount <= 1) return null;
 
   const handlePageClick = (page: number) => {
     if (page !== currentPage) {
