@@ -8,10 +8,9 @@ interface UseButtonClickOptions {
 export const useAuth = (options: UseButtonClickOptions) => {
   const { loginMutation } = useAuthLoginMutation();
 
-  const handleLoginClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleLoginClick = () => {
     window.addEventListener("message", handleOauthMessage);
     if (options.disabled) return;
-    console.log("event", event);
     window.open(
       `https://musicfun.it-incubator.app/api/1.0/auth/oauth-redirect?callbackUrl=${callbackUrl}`,
       "apihub-oauth2",

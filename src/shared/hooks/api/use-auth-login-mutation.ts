@@ -8,6 +8,8 @@ export const useAuthLoginMutation = () => {
 
   const loginMutation = useMutation({
     mutationFn: async ({ code }: { code: string }) => {
+      console.log(code, "code");
+
       const response = await client.POST("/auth/login", {
         body: {
           code: code,
@@ -19,14 +21,14 @@ export const useAuthLoginMutation = () => {
       if (response.error) return console.log("Ошибка получения данных");
       return response.data;
     },
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       if (data && "refreshToken" && "accessToken" in data) {
         localStorage.setItem("music-fun-refreshToken", data.refreshToken);
         localStorage.setItem("music-fun-accessToken", data.accessToken);
         // Инвалидируем значения, сбрасываем кэш для повторного вызова функции авторизации
-        queryClient.invalidateQueries({
-          queryKey: ["auth", "me"],
-        });
+        await queryClient.invalidateQueries({ queryKey: ["auth", "me"] });
+
+        await queryClient.invalidateQueries();
       }
     },
   });
