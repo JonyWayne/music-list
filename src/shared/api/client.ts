@@ -1,6 +1,9 @@
 import createClient, { type Middleware } from "openapi-fetch";
 import type { paths } from "./schema";
 
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
+const apiKey = import.meta.env.VITE_APP_API_KEY;
+
 const authMiddleware: Middleware = {
   onRequest({ request }) {
     const accessToken = localStorage.getItem("accessToken");
@@ -21,9 +24,9 @@ const authMiddleware: Middleware = {
 };
 
 export const client = createClient<paths>({
-  baseUrl: "https://musicfun.it-incubator.app/api/1.0/",
+  baseUrl: baseUrl,
   headers: {
-    "api-key": "b7f59546-4e45-4371-96e4-e245541b819f",
+    "api-key": apiKey,
   },
 });
 
