@@ -7,8 +7,8 @@ interface UsePlaylistsQueryProps {
   search: string;
 }
 
-export const usePlaylistsQuery = (props: UsePlaylistsQueryProps) => {
-  const { currentPage, search } = props;
+export const usePlaylistsQuery = (props?: UsePlaylistsQueryProps) => {
+  const { currentPage, search } = props || {};
 
   const playlistsQuery = useQuery({
     queryKey: ["playlists", { currentPage, search }],

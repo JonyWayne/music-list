@@ -1,4 +1,4 @@
 export const localStorageKeys = {
-  refreshToken: "musicfun-refresh-token",
-  accessToken: "musicfun-access-token",
+  refreshToken: "music-fun-refreshtoken",
+  accessToken: "music-fun-accessToken",
 };

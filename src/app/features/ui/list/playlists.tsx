@@ -1,10 +1,12 @@
-import type { SchemaPlaylistListItemJsonApiData } from "../../shared/api/schema";
+import type { FC } from "react";
+
+import type { SchemaPlaylistListItemJsonApiData } from "@/shared/api/schema";
 
 interface PlaylistsProps {
   data?: SchemaPlaylistListItemJsonApiData[];
 }
 
-export const Playlists: React.FC<PlaylistsProps> = ({ data }) => {
+export const Playlists: FC<PlaylistsProps> = ({ data }) => {
   return (
     <ul>
       {data?.map((playlist) => (

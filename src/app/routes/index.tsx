@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PlaylistsPage } from "../pages/playlists-page";
+import { PaginatedPageList } from "../features";
 
 export const Route = createFileRoute("/")({
-  component: PlaylistsPage,
+  component: PaginatedPageList,
 });
